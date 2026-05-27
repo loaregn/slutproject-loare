@@ -1,0 +1,266 @@
+/* stylelint-disable selector-class-pattern, selector-id-pattern */
+
+/* FÖR INDEX.HTML */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 70px;
+}
+
+/* navigation bar */
+.topnav {
+  max-width: 600px;
+  margin: 25px auto;
+  position: relative;
+  background-color: rgb(255 255 255 / 30%);
+  padding: 10px 20px;
+  box-shadow: 0 12px 27px rgb(0 0 0 / 10%);
+  border-radius: 10px;
+  font-weight: 400;
+  font-family: "Noto Serif", serif;
+}
+
+/* gör så att navigation bar är sticky (stannar på skärmen när man scrollar) */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* gör så att det ser snyggt och centrerat ut med all text */
+.topnav-centered a {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+/* ändrar på texten i nav bar men även transationen när tex-boxarna ändrar färg */
+.topnav a {
+  color: #525151;
+  text-shadow: 2px 2px #e1ebe8;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* ändrar på hover när man håller över, vilket bara ändrar färg på boxen runt texten och text-färgen */
+.topnav a:hover {
+  background-color: #f0f0f0;
+  color: #000;
+  text-shadow: 2px 2px #a272fc;
+}
+
+.active.active {
+  text-shadow: 2px 2px #a272fc;
+  font-size: 22px;
+}
+
+/* hjälper med att allt håller sig på sin plats */
+.topnav-right {
+  float: right;
+}
+
+/* anpassar nav-baren för mobil med annan resolution */
+@media screen and (width <= 600px) {
+  /* lägger allt på en rad */
+  .topnav a {
+    display: block;
+  }
+
+  /* fixar så att nav åt höger så att den och centreras */
+  .topnav-right {
+    float: none;
+  }
+
+  /* hjälper till så att allt är i ordning */
+  .topnav-centered a {
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  header {
+    height: 170px;
+  }
+}
+
+/* Är för rubriken för hemsidan */
+.rubrik {
+  text-shadow: 4px 2px #c3ccc7;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  font-size: 3.67vh;
+  padding: 150px;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: underline;
+}
+
+/* Är för innehållet, alltså exempelvis texten */
+.content {
+  font-size: 2.5vh;
+  transition: all 0.3s ease;
+  padding-top: 25vh;
+  padding-bottom: 15.3vh;
+  text-align: center;
+  flex: 1;
+}
+
+/* Också för innehållet men med lite mer olika ändringar. Som skugga, placering o transition */
+#innehåll {
+  transition: all 0.3s ease;
+  margin: auto;
+  text-shadow: 2px 2px #d7dafab7;
+}
+
+p {
+  margin: 40px 0 10px;
+}
+
+/* Ändrar rubrik o texten osv så det är mobilanpassat */
+@media screen and (width <= 600px) {
+  .rubrik {
+    transition: all 0.3s ease;
+    font-size: 2.5vh;
+    display: flex;
+    padding: 170px;
+    white-space: nowrap;
+    position: relative;
+    justify-content: center;
+  }
+
+  .content {
+    transition: all 0.3s ease;
+    padding-top: 12vh;
+    padding-bottom: 17.6vh;
+    white-space: nowrap;
+    position: relative;
+    justify-content: center;
+  }
+}
+
+@media (width <= 920px) and (orientation: landscape) {
+  #footerBild {
+    display: none;
+  }
+}
+
+/* Är Bildern för träden */
+#footerBild {
+  background-image: url("images/footerimage.jpg");
+  height: 208px;
+  background-size: 510px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-position: bottom center;
+}
+
+/* FÖR EMOTIONAL.HTML */
+/* Där det står något som content som finns över, men CT efter, är det bara specialiserat för COLOR THEORY (färglära) fliken */
+/*Då filter, är själva ändringen på bilden. Inverted o grayscale och där under, är bara filter som ändrar på bildens färger */
+.content-CT {
+  font-size: 2.5vh;
+  transition: all 0.3s ease;
+  padding-top: 25vh;
+  text-align: center;
+}
+
+.bild-CT {
+  display: none;
+  margin: auto;
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.video-CT {
+  /* IFALL en video skickas in, hamnar den i detta format */
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  margin: auto;
+}
+
+/* Under är preferenser för knappen när man väljer att ladda upp en bild elr video */
+.knapp-CT {
+  background-color: #f0f0f0;
+  color: #000;
+  padding: 15px 16px;
+  border-radius: 30px;
+  border: none;
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 2px 2px #a272fc;
+}
+
+.knapp-CT::file-selector-button {
+  background-color: #dfdfdf;
+  color: rgb(0 0 0);
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 900;
+  font-family: "Courier New", Courier, monospace;
+  transition: all 0.3s ease;
+}
+
+.knapp-CT::file-selector-button:hover {
+  background-color: #fff;
+  color: #000;
+  text-shadow: 2px 2px #a272fc;
+  transition: all 0.3s ease;
+}
+
+.filter-CT {
+  font-family: "Courier New", Courier, monospace;
+  display: none;
+  padding: 8px 20px;
+  margin: auto;
+  margin-top: 40px;
+  background-color: #f5f3f3;
+  color: #a272fc;
+  border-style: dashed;
+  border-radius: 20px;
+  font-size: large;
+  transition: all 0.3s ease;
+}
+
+.filter-CT:hover {
+  transition: all 0.3s ease;
+  background-color: #ada8a8;
+  border-style: double;
+}
+
+.inverted {
+  filter: invert(1);
+}
+
+.grayScale {
+  filter: grayscale(1);
+}
+
+@media screen and (width <= 600px) {
+  /* För mobilenheter */
+  .bild-CT {
+    transition: all 0.3s ease;
+    width: 80%;
+  }
+}
+
+/* stylelint-enable selector-class-pattern, selector-id-pattern */
+/* Kommentaren över är för automatiska tester !! (finns också längst upp i filen) */

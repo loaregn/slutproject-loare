@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digitalt Skapande - Färglära</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="rubrik">
+        <h1>Färglära</h1>
+      </div>
+      <div class="topnav" id="navbar">
+        <!--centrerade länkar-->
+        <div class="topnav-centered">
+          <a href="index.html" class="active"
+            ><b
+              style="
+                font-family: &quot;Quicksand&quot;, sans-serif;
+                font-weight: 430;
+              "
+              >Hem</b
+            ></a
+          >
+        </div>
+
+        <!--länkar till vänster-->
+        <a href="emotional.html" class="active">Färglära</a>
+
+        <!--länkar till höger-->
+        <div class="topnav-right">
+          <a href="goldenspiral.html" class="active">Gyllene snittet</a>
+        </div>
+      </div>
+    </header>
+
+    <!--här är en class för ändring av färger, med ghälp av knapp osv..-->
+    <div class="content-CT">
+      <input
+        type="file"
+        accept="image/gif, image/jpeg, image/png, video/mp4"
+        class="knapp-CT"
+        onchange="previewImage(this)"
+      />
+      <img class="bild-CT" src="#" style="display: none" alt="previewBild" />
+
+      <!--En till class för videon, lite ändringar också. Videon kan loopas, autoplay och display=none tills användaren väljer att lägga in en video-->
+      <video
+        class="video-CT"
+        autoplay
+        loop
+        playsinline
+        style="display: none"
+      ></video>
+
+      <!--Här är en class för ljudspelaren, tog hjälp av w3 school för denna del-->
+      <div
+        id="custom-audio-player"
+        class="audio-player-container"
+        style="display: none"
+      >
+        <!--Här skapas knappen för att pausa-->
+        <button type="button" id="audio-play-btn" class="player-btn">
+          ⏸ Paus
+        </button>
+        <!--Visar hur länge man har sett på videon med hjälp av max, min, step, value och volume slider-->
+        <div class="progress-area">
+          <div id="audio-progress" class="progress-bar"></div>
+        </div>
+        <div class="volume-container">
+          <span class="volume-icon">Volym</span>
+          <input
+            type="range"
+            id="audio-volume"
+            min="0"
+            max="1"
+            step="0.1"
+            value="1"
+            class="volume-slider"
+          />
+        </div>
+        <span id="audio-time" class="player-time">0:00</span>
+        <!--Visar tiden i formatet minuter:sekunder, ändras i realtid med hjälp av textContent i js-->
+      </div>
+
+      <p id="error-meddelande" style="color: red; display: none"></p>
+    </div>
+    <!--Här visas felmeddelandet, just nu är det display none, men ändras ifall något annat matas in-->
+    <button type="button" class="filter-CT">Klicka för att ändra färg</button>
+
+    <script src="../javascript/emotional.js"></script>
+    <script src="../javascript/script.js"></script>
+    <footer>
+      <div id="footerBild"></div>
+    </footer>
+  </body>
+</html>
