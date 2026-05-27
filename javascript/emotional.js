@@ -142,7 +142,7 @@ function visaFelmeddelande(errorText, input, preview) {
   }
   if (input) input.value = ""; //tömmer filväljaren så att användaren kan välja en annan fil (en som är tillåten)
   if (preview) {
-    preview.src = "images/greenguy.png";
+    preview.src = "../images/greenguy.png";
     preview.style.display = "block";
     image.style.display = "none";
   }
