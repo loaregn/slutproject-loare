@@ -19,9 +19,10 @@ Det är en sida med information om det gyllene snittet.
 Jag testade själv koden på Chrome, Brave och Edge. Alla fungerade.
 
 Använde mig utav denna hemsida för tester av
-HTML : https://validator.w3.org/nu/
-CSS : https://jigsaw.w3.org/css-validator/#validate_by_upload
-JAVASCRIPT : jshint.com & https://eslint.org/play/
+
+- HTML : https://validator.w3.org/nu/
+- CSS : https://jigsaw.w3.org/css-validator/#validate_by_upload
+- JAVASCRIPT : jshint.com & https://eslint.org/play/
 
 ## uhuh
 
