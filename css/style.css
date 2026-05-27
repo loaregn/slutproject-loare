@@ -13,14 +13,13 @@ header {
 
 /* navigation bar */
 .topnav {
-  max-width: 600px;
-  margin: 25px auto;
+  max-width: 700px;
+  margin: 30px auto;
   position: relative;
-  background-color: rgb(255 255 255 / 30%);
-  padding: 10px 20px;
-  box-shadow: 0 12px 27px rgb(0 0 0 / 10%);
-  border-radius: 10px;
-  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.363);
+  padding: 15px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
   font-family: "Noto Serif", serif;
 }
 
@@ -43,11 +42,11 @@ header {
 
 /* ändrar på texten i nav bar men även transationen när tex-boxarna ändrar färg */
 .topnav a {
-  color: #525151;
+  color: #555555;
   text-shadow: 2px 2px #e1ebe8;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 20px;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -63,7 +62,7 @@ header {
 
 .active.active {
   text-shadow: 2px 2px #a272fc;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 /* hjälper med att allt håller sig på sin plats */
@@ -98,13 +97,15 @@ header {
 
 /* Är för rubriken för hemsidan */
 .rubrik {
-  text-shadow: 4px 2px #c3ccc7;
+  text-shadow: 3px 3px #c3ccc7;
   transition: all 0.3s ease;
   display: flex;
   justify-content: center;
-  font-size: 3.67vh;
+  font-size: 2.6vh;
   padding: 150px;
+  padding-top: 180px;
   text-align: center;
+  color: #4e4c4c;
   white-space: nowrap;
   text-decoration: underline;
 }
@@ -160,7 +161,7 @@ p {
 
 /* Är Bildern för träden */
 #footerBild {
-  background-image: url("images/footerimage.jpg");
+  background-image: url("../images/footerimage.jpg");
   height: 208px;
   background-size: 510px;
   position: fixed;
@@ -236,11 +237,13 @@ p {
   color: #a272fc;
   border-style: dashed;
   border-radius: 20px;
+  border: 2px dashed #a272fc;
   font-size: large;
   transition: all 0.3s ease;
 }
 
 .filter-CT:hover {
+  transform: scale(1.02);
   transition: all 0.3s ease;
   background-color: #ada8a8;
   border-style: double;
@@ -259,6 +262,27 @@ p {
   .bild-CT {
     transition: all 0.3s ease;
     width: 80%;
+  }
+}
+
+/* För informationen inom gyllene snittet sidan*/
+.content-GS {
+  font-size: 2.5vh;
+  transition: all 0.3s ease;
+  padding-top: 25vh;
+  text-align: center;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px #f0f0f0;
+  max-width: 800px;
+  margin: auto;
+}
+
+@media screen and (width <= 600px) {
+  /* För mobilenheter */
+  .content-GS {
+    padding-top: 10vh;
+    font-size: 2.2vh;
   }
 }
 

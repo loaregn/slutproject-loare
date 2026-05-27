@@ -148,23 +148,25 @@ function visaFelmeddelande(errorText, input, preview) {
   }
 }
 
-let färgRäkning = 0;
+//KOD FÖR FILTERÄNDRINGEN
+let färgRäkning = 0; //start värdet för färgändringen
 const filterBtn = document.querySelector(".filter-CT");
 
 filterBtn.addEventListener("click", function () {
+  //en eventlistener funktion som definerar const med hjälp av själva knappen
   const previewImg = document.querySelector(".bild-CT");
   const previewVid = document.querySelector(".video-CT");
-
+  //om en bild eller video är synlig, alltså laddas upp, så ökar färgRäkningen med 1
   if (previewImg || previewVid) {
     färgRäkning += 1;
   }
-
+  //om man klickar på knappen en gång, vilket ökar värdet med 1, så kan inverterade färger visas
   if (färgRäkning === 1) {
     filterBtn.textContent = "Inverterad";
     if (previewImg) previewImg.classList.toggle("inverted");
     if (previewVid) previewVid.classList.toggle("inverted");
   }
-
+  //samma sak sker här med samma concept men andra färger, vilket kan fortsätta med tusentals andra färger
   if (färgRäkning === 2) {
     filterBtn.textContent = "Grå";
     // Tar bort inverterat-klassen och slår på gråskala
@@ -176,5 +178,18 @@ filterBtn.addEventListener("click", function () {
       previewVid.classList.remove("inverted");
       previewVid.classList.toggle("grayScale");
     }
+  }
+  //fungerear som en reset knapp, där alla filter tas bort och knappen återgår till sitt ursprungliga textContent
+  if (färgRäkning === 3) {
+    filterBtn.textContent = "Klicka för att ändra färg";
+
+    if (previewImg) {
+      previewImg.classList.remove("grayScale");
+    }
+    if (previewVid) {
+      previewVid.classList.remove("grayScale");
+    }
+
+    färgRäkning = 0; //färgRäkningen blir 0 igen o classList tar bort färgen, vilket gör bilden eller videon normal igen
   }
 });
