@@ -14,6 +14,15 @@ Det är en sida då man kan skicka in en fil o lägga på två olika filter. Jus
 
 Det är en sida med information om det gyllene snittet.
 
+## Manuella och automatiska tester
+
+Jag testade själv koden på Chrome, Brave och Edge. Alla fungerade.
+
+Använde mig utav denna hemsida för tester av
+HTML : https://validator.w3.org/nu/
+CSS : https://jigsaw.w3.org/css-validator/#validate_by_upload
+JAVASCRIPT : jshint.com & https://eslint.org/play/
+
 ## uhuh
 
 ![XSS](images/testXSS.png)
